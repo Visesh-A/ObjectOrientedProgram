@@ -1,0 +1,17 @@
+[
+  {
+    "ShareName": "Tata",
+    "Shares": 120,
+    "PricePerShare": 80
+  },
+  {
+    "ShareName": "Honda",
+    "Shares": 140,
+    "PricePerShare": 80
+  },
+  {
+    "ShareName": "Hero",
+    "Shares": 10,
+    "PricePerShare": 80
+  }
+]

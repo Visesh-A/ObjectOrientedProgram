@@ -1,4 +1,5 @@
-﻿using ObjectOrientedProgram.InventoryDataManagementProblems;
+﻿using ObjectOrientedProgram.CommercialDataProcessing;
+using ObjectOrientedProgram.InventoryDataManagementProblems;
 using ObjectOrientedProgram.InventoryManagement;
 using ObjectOrientedProgram.StcokAccount;
 using System;
@@ -11,7 +12,7 @@ namespace ObjectOrientedProgram
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Select option to perform \n1.Json Inventory \n2.Inventory Management \n3.Stock Account Program \n4.Exit");
+                Console.WriteLine("Select option to perform \n1.Json Inventory \n2.Inventory Management \n3.Stock Account Program \n4.Commercial Data Processing \n5.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -51,6 +52,34 @@ namespace ObjectOrientedProgram
                         stockOperation.ReadJsonfile(@"C:\Users\VISESH\Documents\bl excercise\ObjectOrientedProgram\ObjectOrientedProgram\StockAccount\Stock.json");
                         break;
                     case 4:
+                        StockAccount stockAccount = new StockAccount();
+                        bool flag2 = true;
+                        while (flag2)
+                        {
+                            Console.WriteLine("Select Option\n1.Read JSON File\n2.Buy Stocks\n3.Sell Stocks\n4.Total valueof Stocks\n5.Exit");
+                            int option2 = Convert.ToInt32(Console.ReadLine());
+                            switch (option2)
+                            {
+                                case 1:
+                                    stockAccount.ReadStockFile(@"C:\Users\VISESH\Documents\bl excercise\ObjectOrientedProgram\ObjectOrientedProgram\StockAccount\Stock.json");
+                                    stockAccount.ReadCustomerFile(@"C:\Users\VISESH\Documents\bl excercise\ObjectOrientedProgram\ObjectOrientedProgram\CommercialDataProcessing\Data.json");
+                                    break;
+                                case 2:
+                                    stockAccount.ValueOf();
+                                    break;
+                                case 3:
+                                    stockAccount.Buy();
+                                    break;
+                                case 4:
+                                    stockAccount.SellShare();
+                                    break;
+                                case 5:
+                                    flag2 = false;
+                                    break;
+                            }
+                        }
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }
